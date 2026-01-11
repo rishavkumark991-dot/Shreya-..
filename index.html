@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Love Surprise for Shreya</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .heart {
+      position: fixed;
+      color: #ff4d6d;
+      font-size: 20px;
+      animation: floatUp 5s linear infinite;
+      opacity: 0.8;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(100vh) scale(1); opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-pink-300 overflow-hidden">  <!-- PAGE 1 -->  <div id="page1" class="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center z-10">
+    <h1 class="text-2xl font-bold mb-2">Question No. 1 💖</h1>
+    <p class="text-lg mb-4">Do you love me, <span class="text-pink-500 font-semibold">Shreya</span>?</p>
+    <div class="space-y-3">
+      <button onclick="goToPage2()" class="w-full py-2 rounded-xl bg-pink-500 text-white hover:bg-pink-600">Yes</button>
+      <button onclick="goToPage2()" class="w-full py-2 rounded-xl bg-pink-500 text-white hover:bg-pink-600">Ha</button>
+      <button onclick="goToPage2()" class="w-full py-2 rounded-xl bg-pink-500 text-white hover:bg-pink-600">Bilkul</button>
+    </div>
+  </div>  <!-- PAGE 2 -->  <div id="page2" class="hidden bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center z-10">
+    <h1 class="text-2xl font-bold mb-4 text-pink-600">❤️ I Love You Shreya ❤️</h1>
+    <div class="text-lg space-y-1 mb-6">
+      <p>I love you so much meri jaan</p>
+      <p>I love you so much meri jaan</p>
+      <p>I love you so much meri jaan</p>
+      <p>I love you so much meri jaan</p>
+      <p>I love you so much meri jaan</p>
+      <p>I love you so much meri jaan</p>
+      <p>I love you so much meri jaan</p>
+      <p>I love you so much meri jaan</p>
+      <p>I love you so much meri jaan</p>
+      <p>I love you so much meri jaan</p>
+    </div>
+    <div class="italic text-pink-600">
+      "Tumhari muskaan meri duniya hai,<br/>
+      Tumhara saath meri zindagi hai.<br/>
+      Tum ho toh sab kuch khoobsurat hai,<br/>
+      Meri har dhadkan sirf tumhari hai." 💕
+    </div>
+  </div>  <script>
+    function goToPage2() {
+      document.getElementById('page1').classList.add('hidden');
+      document.getElementById('page2').classList.remove('hidden');
+    }
+
+    // Heart animation
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = Math.random() * 20 + 15 + 'px';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }, 300);
+  </script></body>
+</html>
